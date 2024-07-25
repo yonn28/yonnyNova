@@ -2,14 +2,14 @@
 ## correr los script de backend y de front end
 frontend
 `
-cd bank-products
-npm install
+cd bank-products;
+npm install;
 npm run start
 `
 backend
 `
-cd repo-interview-main
-npm install
+cd repo-interview-main;
+npm install ;
 npm run start:dev
 `
 ## pantalla inicial 
@@ -140,7 +140,7 @@ funcion paginar
 ## unit testing en el proyecto de front end ejecutar el siguiente comando para validar el coverage
 
 `
-  cd bank-products
+  cd bank-products;
   npm run test:coverage
 `
 se obtiene el siguiente reporte de covertura

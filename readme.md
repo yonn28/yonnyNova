@@ -145,4 +145,4 @@ funcion paginar
 `
 se obtiene el siguiente reporte de covertura
 
-![title](Images/coverage.png)
+![title](Images/coverage1.png)

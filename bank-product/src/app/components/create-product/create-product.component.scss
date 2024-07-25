@@ -1,0 +1,98 @@
+
+.form-container{
+    padding: 50px 10% 0 10%;
+}
+
+form{
+    background: white;
+    padding: 1rem;
+}
+
+.form-fields {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    padding: 1rem;
+}
+
+.form-group {
+    margin-right: 50px;
+  }
+  
+  label {
+    font-weight: bold; 
+    margin-bottom: 5px; 
+    display: block; 
+  }
+  
+  input[type="text"], input[type="date"] {
+    width: 100%;
+    padding: 10px; 
+    font-size: 14px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .form-buttons{
+    display:flex;
+    justify-content: center;
+    gap: 6rem;
+  }
+
+
+  .btn {
+    padding: 10px 20px; 
+    font-size: 14px; 
+    cursor: pointer; 
+    border-radius: 4px; 
+  }
+  
+  .btn-primary {
+    background: #f4f6f9;
+    border: none; 
+  }
+  
+  .btn-primary:hover {
+    background-color: #f4f6f9bb; 
+  }
+  
+  .btn-success:hover {
+    background-color: #eed763; 
+  }
+  
+  .btn-success {
+    background-color: #f0cd1d; 
+    color: #fff;
+    border: none;
+    &:disabled{
+      background-color: #f5ecbf; 
+      cursor: not-allowed;
+    }
+  }
+  
+
+
+  .is-invalid {
+    border: 1px solid #dc3545 !important; 
+    background-color: #f8d7da; 
+  }
+  .is-invalid-text{
+    color: #dc3545;
+  }
+
+  @media (max-width: 480px) {
+    .form-fields {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 10px;
+        padding: 1rem;
+    }
+  }

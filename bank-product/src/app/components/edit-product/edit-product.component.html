@@ -1,0 +1,102 @@
+
+<div class="form-container">
+    <form (ngSubmit)="onSubmit()" #productForm="ngForm" >
+        <div class="form-fields">
+            <div class="form-group">
+                <label for="id">ID</label>
+                <input type="text" 
+                       id="id" 
+                       name="id" 
+                       [(ngModel)]="product.id" 
+                       required minlength="3" maxlength="10" 
+                       #idField="ngModel"
+                       disabled>
+            </div>
+        
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" 
+                       id="nombre" 
+                       name="nombre" 
+                       [(ngModel)]="product.nombre" r
+                       required 
+                       minlength="5" 
+                       maxlength="100" 
+                       #nombreField="ngModel"
+                       [ngClass]="{'is-invalid': nombreField.invalid && (nombreField.dirty || nombreField.touched)}"
+                       > 
+                @if(nombreField.errors?.['required'] && nombreField.touched){<div class="is-invalid-text">Nombre es requerido.</div>}
+                @if(nombreField.errors?.['minlength'] ){<div class="is-invalid-text">Nombre debe tener entre 5 y 100 caracteres.</div>}
+            </div>
+        
+            <div class="form-group">
+                <label for="descripcion">Descripción</label>
+                <textarea 
+                          id="descripcion" 
+                          name="descripcion" 
+                          [(ngModel)]="product.descripcion" 
+                          required 
+                          minlength="10" 
+                          maxlength="200" 
+                          #descripcionField="ngModel"
+                          [ngClass]="{'is-invalid': descripcionField.invalid && (descripcionField.dirty || descripcionField.touched)}"
+                          ></textarea>
+                
+                @if(descripcionField.errors?.['required'] && descripcionField.touched){<div class="is-invalid-text">Descripción es requerida.</div>}
+                @if(descripcionField.errors?.['minlength'] ){<div class="is-invalid-text">Descripción debe tener entre 10 y 200 caracteres.</div>}
+            </div>
+        
+            <div class="form-group">
+                <label for="logo">Logo</label>
+                <input type="text" 
+                        class="form-control" 
+                        id="logo" 
+                        name="logo" 
+                       [(ngModel)]="product.logo" 
+                       required 
+                       #logoField="ngModel"
+                       [ngClass]="{'is-invalid': logoField.invalid && (logoField.dirty || logoField.touched)}"
+                       >
+                @if(logoField.errors?.['required'] && logoField.touched){<div class="is-invalid-text">Logo es requerido.</div>}
+            </div>
+        
+            <div class="form-group">
+                <label for="fechaLiberacion">Fecha de Liberación</label>
+                <input  
+                       type="date" 
+                       class="form-control" 
+                       id="fechaLiberacion" 
+                       name="fechaLiberacion" 
+                       [(ngModel)]="product.fechaLiberacion" 
+                       required 
+                       (input)="validateFechaLiberacion()" 
+                       #fechaLiberacionField="ngModel"
+                       [ngClass]="{'is-invalid': fechaLiberacionField.invalid && (fechaLiberacionField.dirty || fechaLiberacionField.touched)}"
+                       >
+                @if(fechaLiberacionField.errors?.['required'] && fechaLiberacionField.touched){<div class="is-invalid-text">Fecha de Liberaciónes requerida.</div>}
+                @if(!isfechaLiberacionValid && fechaLiberacionField.touched && !fechaLiberacionField.errors?.['required']){ <div class="is-invalid-text">La fecha de liberación debe ser igual o mayor a la fecha actual.</div> }
+            </div>
+        
+            <div class="form-group">
+                <label for="fechaRevision">Fecha de Revisión</label>
+                <input type="date" 
+                       id="fechaRevision" 
+                       name="fechaRevision" 
+                       [(ngModel)]="product.fechaRevision" 
+                       required 
+                       disabled
+                       #fechaRevisionField="ngModel"
+                       [ngClass]="{'is-invalid': fechaRevisionField.invalid && (fechaRevisionField.dirty || fechaRevisionField.touched)}"
+                       >
+            
+                @if(fechaRevisionField.errors?.['required'] && fechaRevisionField.touched){<div class="is-invalid-text">Fecha de Revisión es requerida.</div>}
+            </div>
+        </div>
+        
+        <!-- Botones -->
+        <div class="form-buttons">
+            <button type="button" class="btn btn-primary" (click)="resetForm()">Reiniciar</button>
+            <button type="submit" class="btn btn-success" [disabled]="!productForm.form.valid ||  !isfechaLiberacionValid ">Enviar</button>
+        </div>
+    </form>
+</div>

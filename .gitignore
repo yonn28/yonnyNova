@@ -1,15 +1,17 @@
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
 # Compiled output
-/dist
-/tmp
-/out-tsc
-/bazel-out
+/bank-product/dist
+/bank-product/tmp
+/bank-product/out-tsc
+/bank-product/bazel-out
 
 # Node
-/node_modules
-npm-debug.log
-yarn-error.log
+/bank-product/node_modules
+/bank-product/npm-debug.log
+/bank-product/yarn-error.log
+/repo-interview-main/node_modules
+/repo-interview-main/pnpm-lock.yaml
 
 # IDEs and editors
 .idea/
@@ -21,22 +23,22 @@ yarn-error.log
 *.sublime-workspace
 
 # Visual Studio Code
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.history/*
+/bank-product/.vscode/*
+/bank-product/!.vscode/settings.json
+/bank-product/!.vscode/tasks.json
+/bank-product/!.vscode/launch.json
+/bank-product/!.vscode/extensions.json
+/bank-product/.history/*
 
 # Miscellaneous
-/.angular/cache
-.sass-cache/
-/connect.lock
-/coverage
-/libpeerconnection.log
-testem.log
-/typings
+/bank-product/.angular/cache
+/bank-product/.sass-cache/
+/bank-product/connect.lock
+/bank-product/coverage
+/bank-product/libpeerconnection.log
+/bank-product/testem.log
+/bank-product/typings
 
 # System files
-.DS_Store
-Thumbs.db
+/bank-product/.DS_Store
+/bank-product/Thumbs.db

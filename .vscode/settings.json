@@ -1,0 +1,4 @@
+{
+    "npm.enableRunFromFolder": false,
+    "npm.autoDetect": "on"
+}
